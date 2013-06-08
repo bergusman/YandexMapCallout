@@ -1,2 +1,2 @@
 platform :ios
-pod 'YandexMapKit', '~> 1.0'
+pod 'YandexMapKit', '~> 1.0.4'
