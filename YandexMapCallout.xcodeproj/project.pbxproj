@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		AD4B06D61763A0DB001FC888 /* VBAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4B06D51763A0DB001FC888 /* VBAnnotation.m */; };
 		AD4B06DC1763A9B5001FC888 /* VBCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4B06DB1763A9B5001FC888 /* VBCalloutView.m */; };
+		AD4B06E71763DCC7001FC888 /* callout-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4B06E31763DCC6001FC888 /* callout-anchor.png */; };
+		AD4B06E81763DCC7001FC888 /* callout-anchor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4B06E41763DCC6001FC888 /* callout-anchor@2x.png */; };
+		AD4B06E91763DCC7001FC888 /* callout-body.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4B06E51763DCC7001FC888 /* callout-body.png */; };
+		AD4B06EA1763DCC7001FC888 /* callout-body@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD4B06E61763DCC7001FC888 /* callout-body@2x.png */; };
+		AD4B06F01763DF44001FC888 /* VBCalloutContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4B06EF1763DF44001FC888 /* VBCalloutContentView.m */; };
+		AD4B06F21763DF56001FC888 /* VBCalloutContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4B06F11763DF56001FC888 /* VBCalloutContentView.xib */; };
 		AD83EFA3176399F400A51AB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83EFA2176399F400A51AB9 /* UIKit.framework */; };
 		AD83EFA5176399F400A51AB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83EFA4176399F400A51AB9 /* Foundation.framework */; };
 		AD83EFA7176399F400A51AB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83EFA6176399F400A51AB9 /* CoreGraphics.framework */; };
@@ -29,6 +35,13 @@
 		AD4B06D51763A0DB001FC888 /* VBAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBAnnotation.m; sourceTree = "<group>"; };
 		AD4B06DA1763A9B5001FC888 /* VBCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCalloutView.h; sourceTree = "<group>"; };
 		AD4B06DB1763A9B5001FC888 /* VBCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCalloutView.m; sourceTree = "<group>"; };
+		AD4B06E31763DCC6001FC888 /* callout-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callout-anchor.png"; sourceTree = "<group>"; };
+		AD4B06E41763DCC6001FC888 /* callout-anchor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callout-anchor@2x.png"; sourceTree = "<group>"; };
+		AD4B06E51763DCC7001FC888 /* callout-body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callout-body.png"; sourceTree = "<group>"; };
+		AD4B06E61763DCC7001FC888 /* callout-body@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "callout-body@2x.png"; sourceTree = "<group>"; };
+		AD4B06EE1763DF44001FC888 /* VBCalloutContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCalloutContentView.h; sourceTree = "<group>"; };
+		AD4B06EF1763DF44001FC888 /* VBCalloutContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCalloutContentView.m; sourceTree = "<group>"; };
+		AD4B06F11763DF56001FC888 /* VBCalloutContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VBCalloutContentView.xib; sourceTree = "<group>"; };
 		AD83EF9F176399F400A51AB9 /* YandexMapCallout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMapCallout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD83EFA2176399F400A51AB9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD83EFA4176399F400A51AB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,10 +97,40 @@
 		AD4B06D91763A824001FC888 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD4B06EC1763DED3001FC888 /* Callout View */,
+				AD4B06ED1763DF2B001FC888 /* Callout Content View */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AD4B06EB1763DCCC001FC888 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B06E31763DCC6001FC888 /* callout-anchor.png */,
+				AD4B06E41763DCC6001FC888 /* callout-anchor@2x.png */,
+				AD4B06E51763DCC7001FC888 /* callout-body.png */,
+				AD4B06E61763DCC7001FC888 /* callout-body@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		AD4B06EC1763DED3001FC888 /* Callout View */ = {
+			isa = PBXGroup;
+			children = (
 				AD4B06DA1763A9B5001FC888 /* VBCalloutView.h */,
 				AD4B06DB1763A9B5001FC888 /* VBCalloutView.m */,
 			);
-			name = Views;
+			name = "Callout View";
+			sourceTree = "<group>";
+		};
+		AD4B06ED1763DF2B001FC888 /* Callout Content View */ = {
+			isa = PBXGroup;
+			children = (
+				AD4B06EE1763DF44001FC888 /* VBCalloutContentView.h */,
+				AD4B06EF1763DF44001FC888 /* VBCalloutContentView.m */,
+				AD4B06F11763DF56001FC888 /* VBCalloutContentView.xib */,
+			);
+			name = "Callout Content View";
 			sourceTree = "<group>";
 		};
 		AD83EF96176399F400A51AB9 = {
@@ -129,6 +172,7 @@
 				AD83EFB2176399F400A51AB9 /* VBAppDelegate.m */,
 				AD83EFBA176399F400A51AB9 /* MainStoryboard.storyboard */,
 				AD83EFA9176399F400A51AB9 /* Supporting Files */,
+				AD4B06EB1763DCCC001FC888 /* Images */,
 			);
 			path = YandexMapCallout;
 			sourceTree = "<group>";
@@ -206,6 +250,11 @@
 				AD83EFB7176399F400A51AB9 /* Default@2x.png in Resources */,
 				AD83EFB9176399F400A51AB9 /* Default-568h@2x.png in Resources */,
 				AD83EFBC176399F400A51AB9 /* MainStoryboard.storyboard in Resources */,
+				AD4B06E71763DCC7001FC888 /* callout-anchor.png in Resources */,
+				AD4B06E81763DCC7001FC888 /* callout-anchor@2x.png in Resources */,
+				AD4B06E91763DCC7001FC888 /* callout-body.png in Resources */,
+				AD4B06EA1763DCC7001FC888 /* callout-body@2x.png in Resources */,
+				AD4B06F21763DF56001FC888 /* VBCalloutContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +301,7 @@
 				AD83EFBF176399F400A51AB9 /* VBViewController.m in Sources */,
 				AD4B06D61763A0DB001FC888 /* VBAnnotation.m in Sources */,
 				AD4B06DC1763A9B5001FC888 /* VBCalloutView.m in Sources */,
+				AD4B06F01763DF44001FC888 /* VBCalloutContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

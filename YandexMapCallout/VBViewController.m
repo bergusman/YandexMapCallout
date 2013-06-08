@@ -7,8 +7,12 @@
 //
 
 #import "VBViewController.h"
+
 #import "VBCalloutView.h"
+#import "VBCalloutContentView.h"
+
 #import "VBAnnotation.h"
+
 #import <YandexMapKit/YandexMapKit.h>
 
 @interface VBViewController () <YMKMapViewDelegate>
@@ -31,6 +35,8 @@
     
     YMKMapCoordinate center = YMKMapCoordinateMake(55.75586, 37.617726);
     [self.mapView setCenterCoordinate:center atZoomLevel:12 animated:NO];
+    
+    [self moveYandexLogo];
 }
 
 - (void)addAnnotations {
@@ -51,6 +57,14 @@
     }
 }
 
+- (void)moveYandexLogo {
+    for (UIView *view in self.mapView.subviews) {
+        if ([view isKindOfClass:[UIImageView class]]) {
+            view.center = CGPointMake(self.view.center.x, view.center.y);
+        }
+    }
+}
+
 #pragma mark - YMKMapViewDelegate
 
 - (YMKAnnotationView *)mapView:(YMKMapView *)mapView viewForAnnotation:(id<YMKAnnotation>)annotation {
@@ -66,9 +80,15 @@
     VBCalloutView * calloutView = (VBCalloutView *)[mapView dequeueReusableCalloutViewWithIdentifier:calloutIdentifier];
     if (!calloutView) {
         calloutView = [[VBCalloutView alloc] initWithReuseIdentifier:calloutIdentifier];
+        
+        UINib *nib = [UINib nibWithNibName:NSStringFromClass([VBCalloutContentView class]) bundle:[NSBundle mainBundle]];
+        VBCalloutContentView *contentView = (VBCalloutContentView *)[nib instantiateWithOwner:nil options:nil][0];
+        calloutView.contentView = contentView;
     }
     
-    //calloutView.annotation = annotation;
+    VBCalloutContentView *contentView = (VBCalloutContentView *)calloutView.contentView;
+    contentView.titleLabel.text = [annotation title];
+    contentView.subtitleLabel.text = [annotation subtitle];
     
     return calloutView;
 }
