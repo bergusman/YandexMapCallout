@@ -10,6 +10,7 @@
 
 #import <YandexMapKit/YandexMapKit.h>
 
+#warning Set your API Key
 #define YANDEX_MAP_API_KEY @""
 
 @implementation VBAppDelegate
